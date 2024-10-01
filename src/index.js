@@ -87,6 +87,12 @@ app.post('/login', (req, res) => {
 
 // ETAPA DE CRIAÇÃO DE MENSAGENS
 
+const messages = [{
+    id: 1,
+    title: "",
+    description: "",
+}]
+
 app.post('/message', (req, res) => {
     const { email, title, description } = req.body;
 
@@ -157,7 +163,7 @@ app.put('/messages/:id', (req, res) => {
     messageToUpdate.description = description;
 
     return res.status(200).json({
-        message: `Mensagem atualizada com sucesso: ${messageToUpdate.title}`
+        message: `Mensagem atualizada com sucesso: ${messageToUpdate.title}`,
     });
 });
 
