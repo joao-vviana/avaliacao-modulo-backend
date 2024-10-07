@@ -119,7 +119,8 @@ app.post('/message', (req, res) => {
     messages.push(newMessage);
 
     return res.status(201).json({
-        message: `Mensagem criada com sucesso: ${newMessage.title}`
+        message: `Mensagem criada com sucesso: ${newMessage.title}`,
+        messages: newMessage
     });
 });
 
